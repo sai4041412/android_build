@@ -1060,14 +1060,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     dynamic_partitions_diff = common.DynamicPartitionsDifference(
         info_dict=OPTIONS.info_dict,
         block_diffs=block_diff_dict.values(),
-        progress_dict=progress_dict,
-        # In DynamicPartitionsDifference, we have no direct information
-        # whether the package is FullOTA or not, so we should pass the
-        # build_without_vendor parameter here instead of detecting it
-        # automatically in DynamicPartitionsDifference.
-        # (A non-FullOTA build may also contain no vendor image if there
-        #  is no change)
-        build_without_vendor=('vendor' not in block_diff_dict.keys()))
+        progress_dict=progress_dict)
     dynamic_partitions_diff.WriteScript(script, output_zip,
                                         write_verify_script=OPTIONS.verify)
   else:
@@ -1085,8 +1078,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.ShowProgress(0.02, 10)
     script.RunBackup("restore", sysmount)
 
-  script.Print(" ")
-  script.Print("Flashing boot image..")
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 10)
@@ -1657,6 +1648,9 @@ def WriteBlockIncrementalOTAPackage(target_zip, source_zip, output_file):
                                         target_info=target_info,
                                         source_info=source_info,
                                         device_specific=device_specific)
+
+  AddCompatibilityArchiveIfTrebleEnabled(
+      target_zip, output_zip, target_info, source_info)
 
   # Assertions (e.g. device properties check).
   target_info.WriteDeviceAssertions(script, OPTIONS.oem_no_mount)

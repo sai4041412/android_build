@@ -175,6 +175,10 @@ else
   endif
 endif
 
+#
+# -----------------------------------------------------------------
+# Add our DU properties to the build properties.
+ADDITIONAL_BUILD_PROPERTIES += $(DU_PROPERTIES)
 
 # Bring in standard build system definitions.
 include $(BUILD_SYSTEM)/definitions.mk

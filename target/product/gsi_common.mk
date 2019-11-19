@@ -81,6 +81,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 28
 # More AOSP packages
 PRODUCT_PACKAGES += \
     messaging \
+    PhotoTable \
     WAPPushManager \
     WallpaperPicker \
 

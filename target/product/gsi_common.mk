@@ -30,7 +30,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Additional settings used in all AOSP builds
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=The_big_adventure.ogg \
+    ro.config.ringtone=The_big_adventure.ogg,The_big_adventure.ogg \
     ro.config.notification_sound=Popcorn.ogg \
 
 # The mainline checking whitelist, should be clean up

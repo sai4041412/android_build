@@ -28,11 +28,6 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.apex.updatable=false
 
-# Additional settings used in all AOSP builds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=The_big_adventure.ogg,The_big_adventure.ogg \
-    ro.config.notification_sound=Popcorn.ogg \
-
 # The mainline checking whitelist, should be clean up
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_WHITELIST += \
     system/app/messaging/messaging.apk \

@@ -41,11 +41,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
-# Additional settings used in all AOSP builds
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.config.ringtone=The_big_adventure.ogg,The_big_adventure.ogg \
-    ro.config.notification_sound=Popcorn.ogg
-
 # Put en_US first in the list, so make it default.
 PRODUCT_LOCALES := en_US
 

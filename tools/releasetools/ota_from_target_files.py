@@ -935,11 +935,12 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   device = target_info.GetBuildProp("ro.du.device")
 
   script.Print("----------------------------------------------");
-  script.Print("          ____  __  ______  _______  __       ");
-  script.Print("         / __ \/ / / / __ \/ ____/ |/ /       ");
-  script.Print("        / / / / / / / /_/ / __/  |   /        ");
-  script.Print("       / /_/ / /_/ / _, _/ /___ /   |         ");
-  script.Print("      /_____/\____/_/ |_/_____//_/|_|         ");
+  script.Print("    _____ ____  _______      ___    _  _____  ");
+  script.Print("   / ____/ __ \|  __ \ \    / / |  | |/ ____| ");
+  script.Print("  | |   | |  | | |__) \ \  / /| |  | | (___   ");
+  script.Print("  | |   | |  | |  _  / \ \/ / | |  | |\___ \  ");
+  script.Print("  | |___| |__| | | \ \  \  /  | |__| |____) | ");
+  script.Print("   \_____\____/|_|  \_\  \/    \____/|_____/  ");
   script.Print("                                              ");
   script.Print("               by Genkzsz11                   ");
   script.Print("----------------------------------------------");

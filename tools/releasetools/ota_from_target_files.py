@@ -1024,7 +1024,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("  | |___| |__| | | \ \  \  /  | |__| |____) | ");
   script.Print("   \_____\____/|_|  \_\  \/    \____/|_____/  ");
   script.Print("                                              ");
-  script.Print("       by Genkzsz11, Rafiester & Ritzz        ");
+  script.Print("  by Genkzsz11, Rafiester ,Ritzz & DeadmanxXD ");
   script.Print("----------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
   script.Print(" Build id: %s"%(build_id));

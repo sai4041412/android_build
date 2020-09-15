@@ -144,6 +144,14 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
+    if (echo -n $1 | grep -q -e "^corvus_") ; then
+        CORVUS_BUILD=$(echo -n $1 | sed -e 's/^corvus_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $CORVUS_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+    else
+        CORVUS_BUILD=
+    fi
+    export CORVUS_BUILD
+
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
         TARGET_BUILD_TYPE= \
@@ -662,6 +670,8 @@ function lunch()
     then
         return 1
     fi
+
+    check_product $product
 
     export TARGET_PRODUCT=$(get_build_var TARGET_PRODUCT)
     export TARGET_BUILD_VARIANT=$(get_build_var TARGET_BUILD_VARIANT)

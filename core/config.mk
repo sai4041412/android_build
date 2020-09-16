@@ -1254,9 +1254,9 @@ DEFAULT_DATA_OUT_MODULES := ltp $(ltp_packages) $(kselftest_modules)
 .KATI_READONLY := DEFAULT_DATA_OUT_MODULES
 
 # Include any vendor specific config.mk file
--include vendor/*/build/core/config.mk
+-include vendor/corvus/build/core/config.mk
 
 # Rules for MTK targets
--include $(TOPDIR)vendor/*/build/core/mtk_target.mk
+-include $(TOPDIR)vendor/corvus/build/core/mtk_target.mk
 
 include $(BUILD_SYSTEM)/dumpvar.mk

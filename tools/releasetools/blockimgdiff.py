@@ -1556,7 +1556,8 @@ class BlockImageDiff(object):
 
     large_apks = []
     split_large_apks = []
-    cache_size = common.OPTIONS.cache_size
+   #cache_size = common.OPTIONS.cache_size
+    cache_size = 268435456
     split_threshold = 0.125
     assert cache_size is not None
     max_blocks_per_transfer = int(cache_size * split_threshold /
